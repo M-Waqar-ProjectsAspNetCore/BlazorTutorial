@@ -1,0 +1,12 @@
+﻿<h3 style="color:@fontcolor; @GBorder">Grand Child Component - Age: @GrandChildAge - Counter Value : @GrandChildCounter</h3>
+
+@code {
+    [CascadingParameter(Name = "Color")]
+    private string fontcolor { get; set; }
+    [CascadingParameter(Name = "Border")]
+    private string GBorder { get; set; }
+    [CascadingParameter]
+    private int GrandChildAge { get; set; }
+    [CascadingParameter]
+    private long GrandChildCounter { get; set; }
+}

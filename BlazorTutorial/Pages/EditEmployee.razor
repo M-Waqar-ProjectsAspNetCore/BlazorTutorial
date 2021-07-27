@@ -1,0 +1,64 @@
+﻿@page "/editemployee/{id:int}"
+@inherits EditEmployeeBase
+
+<h3>Edit Employee</h3>
+<hr />
+<EditForm Model="Employee" OnValidSubmit="EditEmployee">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            First Name
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="First Name"
+                       @bind-Value="Employee.FirstName" />
+            <ValidationMessage For="@(() => Employee.FirstName)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Last Name
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Last Name"
+                       @bind-Value="Employee.LastName" />
+            <ValidationMessage For="@(() => Employee.LastName)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Email Address
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Email Address"
+                       @bind-Value="Employee.Email" />
+            <ValidationMessage For="@(() => Employee.Email)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Phone No
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Phone No"
+                       @bind-Value="Employee.PhoneNumber" />
+            <ValidationMessage For="@(() => Employee.PhoneNumber)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Designation
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Designation"
+                       @bind-Value="Employee.Designation" />
+            <ValidationMessage For="@(() => Employee.Designation)" />
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Edit Employee" />
+</EditForm>
+
+
+
+

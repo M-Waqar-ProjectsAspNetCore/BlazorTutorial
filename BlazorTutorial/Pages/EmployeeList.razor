@@ -1,0 +1,27 @@
+﻿@page "/employees"
+@inherits EmployeeListBase
+
+<h3>Employee List</h3>
+<input type="checkbox" @bind="DisplayButtons" /> Display Buttons
+<h6>Selected Employees : @Count</h6>
+<hr />
+
+<div class="card-deck">
+    @if (Employees == null)
+    {
+        <div class="lds-ripple">
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+    }
+    else
+    {
+        @foreach (Employee Employee in Employees)
+        {
+            <EmployeeCard OnDeleteEmployee="DeleteEmployee" OnSelectedEmployee="SelectedEmployee" Employee="Employee" DisplayButtons="DisplayButtons"></EmployeeCard>
+        }
+    }
+</div>
+

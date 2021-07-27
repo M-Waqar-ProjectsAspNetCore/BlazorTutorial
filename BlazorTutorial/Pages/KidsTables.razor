@@ -1,0 +1,33 @@
+﻿@page "/tables"
+@inherits KidsTablesBase
+
+<h3>Kids Tables</h3>
+
+<div class="form-group row">
+    <div class="col-sm-6">
+        <lable>Enter Value For Table</lable>
+        <input type="text" @bind="TableNum" class="form-control" />
+    </div>
+    <div class="col-sm-6">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @if (TableNum > 0)
+        {
+            <h4>Table For @TableNum is: </h4>
+            <table class="table table-striped">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <tr>
+                        <td>@TableNum</td>
+                        <td>X</td>
+                        <td>@i</td>
+                        <td>=</td>
+                        <td>@(TableNum * i)</td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@page "/pc"
+@inherits ParentComponentBase
+
+<div class="mb-5">
+    <button class="btn btn-primary" @onclick="@((e) => { Counter++; })">Increment Counter</button>
+    <button class="btn btn-primary" @onclick="@((e) => { Counter--; })">Decrement Counter</button>
+    <button class="btn btn-primary" @onclick="@((e) => { Age++; })">Increment Age</button>
+    <button class="btn btn-primary" @onclick="@((e) => { Age--; })">Decrement Age</button>
+</div>
+<h3 style="color:@Color; @Border">Parent Component - Age: @Age - Counter Value is : @Counter</h3>
+
+<CascadingValue Value="Color" Name="Color" IsFixed="true">
+    <CascadingValue Value="Border" Name="Border" IsFixed="true">
+        <CascadingValue Value="Age" IsFixed="true">
+            <CascadingValue Value="Counter" IsFixed="false">
+                <ChildComponent></ChildComponent>
+            </CascadingValue>
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>

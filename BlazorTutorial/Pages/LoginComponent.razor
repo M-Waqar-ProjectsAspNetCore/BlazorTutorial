@@ -1,0 +1,23 @@
+﻿@layout LoginLayout
+@page "/"
+
+@inherits LoginComponentBase
+
+<EditForm Model="loginModel" OnValidSubmit="HandleSubmitAsync" >
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">User Name</label>
+        <InputText id="name" @bind-Value="loginModel.UserName" class="form-control"></InputText>
+        <ValidationMessage For="@(() => loginModel.UserName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <InputText id="password" @bind-Value="loginModel.Password" type="password" class="form-control"></InputText>
+        <ValidationMessage For="@(() => loginModel.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>

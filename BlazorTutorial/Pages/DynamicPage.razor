@@ -1,0 +1,16 @@
+﻿@page "/dynamic"
+
+<h3>Dynamic Page</h3>
+
+<input type="button" value="Blazor Server" class="btn btn-primary" @onclick="@BlazorServerClick" />
+<input type="button" value="Blazor Web Assembly" class="btn btn-primary" @onclick="@BlazorWebAssemblyClick" />
+<input type="button" value="Reset" class="btn btn-primary" @onclick="@ResetClick" />
+
+<div class="mt-5">
+    <h3>@Heading</h3>
+    <div>
+        <p>@Description</p>
+    </div>
+</div>
+
+

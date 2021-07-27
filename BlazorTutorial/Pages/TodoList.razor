@@ -1,0 +1,28 @@
+﻿@page "/todo"
+@inherits TodoListBase
+
+<h3>Todo List</h3>
+
+<div class="form-group row">
+    <div class="col-sm-6">
+        <label>Enter Todo Item</label>
+        <input type="text" @bind="@todoItem" class="form-control" />
+        <button @onclick="@AddTodo" class="btn btn-success btn-block mt-3">Add Todo</button>
+    </div>
+    <div class="col-sm-6">
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-sm-6">
+        @foreach (string item in TodoList)
+        {
+            <div class="alert alert-primary" role="alert">
+                @item
+            </div>
+        }
+    </div>
+    <div class="col-sm-6">
+    </div>
+</div>
+
+

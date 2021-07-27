@@ -1,0 +1,29 @@
+﻿@page "/binding"
+@inherits TwoWayDataBindingBase
+
+<h3>Two Way Data Binding</h3>
+<hr />
+<div class="mt-2 mb-2">
+    <h5>Two Way Data Binding (Default)</h5>
+    <p>This is the default 2 way data binding using bind attribute, it will work on change i.e. Blur or onchange event by default</p>
+    <textarea @bind="@Description" class="form-control"></textarea>
+    <div>Description is: @Description</div>
+    <div>Description Length is: @Description.Length</div>
+</div>
+<hr />
+<div class="mt-2 mb-2">
+    <h5>Two Way Data Binding (Event Based Using Bind Property)</h5>
+    <p>This is 2 way data binding using bind attribute with bind event(bind:event="oninput")</p>
+    <textarea @bind="@Message" @bind:event="oninput" class="form-control"></textarea>
+    <div>Description is: @Message</div>
+    <div>Description Length is: @Message.Length</div>
+</div>
+<hr />
+<div class="mt-2 mb-2">
+    <h5>One Way Binding to Two Way Data Binding (With Out Bind Attribute)</h5>
+    <p>Assign property in value attribut and assign the value to property in onchange / oninput event</p>
+    <textarea value="@Value" @oninput="@((e) => { Value = e.Value.ToString(); })" @onchange="@((e) => { Value = e.Value.ToString(); })" class="form-control"></textarea>
+    <div>Description is: @Value</div>
+    <div>Description Length is: @Value.Length</div>
+</div>
+
